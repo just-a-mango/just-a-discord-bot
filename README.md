@@ -3,4 +3,4 @@
 ## just-a-discord-bot
 A discord bot I wrote in Python many moons ago...\
 It (normally if everything works) supports profanity-checking, music, and other things\
-I'm not even sure it works fine now but you can use it as you wish (check the license for more information)
+I'm not even sure it works fine now but you can use it as you wish (check the [license](https://github.com/just-a-mango/just-a-discord-bot/blob/main/LICENSE) for more information)
