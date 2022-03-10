@@ -10,14 +10,14 @@ import os
 import shutil
 
 reddit = praw.Reddit(
-    client_id = "z0tV5Vb8-xHnYA",
-    client_secret = "EgmNP1VmT-IpIMj-7auUMM8E0W0",
+    client_id = "your client id",
+    client_secret = "your client secret",
     username = "python_praw123",
     password = "python123",
     user_agent = "pythonpraw"
 )
 
-token = 'NzQ2MzA4MDU3NTM2OTIxNjYw.Xz-big.b6G_jtLwFAkpvdmi1Rn_gM2ut64'
+token = "your discord bot's token"
 
 commands_prefix = '/'
 
@@ -83,7 +83,7 @@ possible_answers = [
 
 @client.event
 async def on_ready():
-    await client.change_presence(status=discord.Status.online, activity=discord.Game("Hi there! I'm Disbot! I'm a cool bot with TONS of coooool features! Here is my Patreon if you want : https://www.patreon.com/bePatron?u=39357380"))
+    await client.change_presence(status=discord.Status.online, activity=discord.Game("Your bot's game activity"))
     print("Bot is ready")
 
 @client.event
@@ -98,23 +98,6 @@ async def on_message(msg):
             if emoji_name == emoji.name:
                 await msg.channel.send(str(emoji))
                 await msg.delete()
-    if "why" in msg.content:
-        await msg.add_reaction("<:blobhyperthink:745738517652570293>")
-        await msg.add_reaction("<:question:745762306759065631>")
-    if "question" in msg.content:
-        await msg.add_reaction("<:question:745762306759065631>")
-    if "thanks" in msg.content:
-        await msg.add_reaction("<:question:745738517690187816>")
-    if "run" in msg.content:
-        await msg.add_reaction("<:sonic:745762307631480852>")
-        await msg.add_reaction("<:linkrun:745762306280915025>")
-        await msg.add_reaction("<:metroid:745762307270770798>")
-    if "dance" in msg.content:
-        await msg.add_reaction("<:mario_luigi_dance:745762307401056277>")
-        await msg.add_reaction("<:sonicdance:745762306780299284>")
-    if "wait" in msg.content:
-        await msg.add_reaction("<:sonic_waiting:745762306939682826>")
-        await msg.add_reaction("<:sonicwait:745762306839019550>")
         
 
 @client.event
@@ -198,7 +181,7 @@ async def kick(ctx, member : discord.Member, *, reason=None):
 async def ban(ctx, member : discord.Member, *, reason="No fuckin' reason :rofl:"):
     await member.ban(reason=reason)
     await ctx.send(f'{member.mention} successfully banned from the server.')
-    await member.send(f"O O F - You've been banned from Ballness Madness(I guess you deserved it lol) - Reason : {reason}")
+    await member.send(f"O O F - You've been banned from {server} - Reason : {reason}")
 
 @client.command()
 @commands.has_permissions(ban_members=True)
